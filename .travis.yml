@@ -1,6 +1,13 @@
-install: make get-deps
-#./configure && make && make test
 language: cpp
-compiler: g++
-# uncomment and edit the following line if your project needs to run something other than `rake`:
-# script: bundle exec rspec spec
+compiler:
+  - gcc
+  - clang
+# trusty (14.04) is now used instead of precise (12.04)
+sudo: required
+dist: trusty
+before_script:
+  - mkdir build
+  - cd build
+  - cmake --version
+  - cmake -DCMAKE_VERBOSE_MAKEFILE=ON ..
+script: make && ./diff_match_patch_test_string && ./diff_match_patch_test_wstring
