@@ -8,4 +8,4 @@ dist: trusty
 before_script:
   - mkdir build
   - cd build
-script: make && ./diff_match_patch_test_string && ./diff_match_patch_test_wstring
+script: make
