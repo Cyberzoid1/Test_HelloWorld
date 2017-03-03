@@ -1,5 +1,5 @@
 install: make get-deps
-./configure && make && make test
+#./configure && make && make test
 language: cpp
 compiler: g++
 # uncomment and edit the following line if your project needs to run something other than `rake`:
